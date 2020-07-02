@@ -1,0 +1,1020 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.15;
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: normal;
+    color: #666d89;
+}
+
+header,
+.slider,
+.services,
+.portfolio,
+.about,
+.contact,
+footer {
+    position: relative;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    padding-top: 30px;
+    padding-bottom: 31px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 6px solid #323746;
+    background-color: #2d303a;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1,
+h2,
+h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1 {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+h1::after {
+    content: "*";
+    font-size: 25px;
+    color: #f06c64;
+}
+
+nav {
+    margin-top: 8px;
+    white-space: nowrap;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav a {
+    float: left;
+    color: #ffffff;
+    text-align: left;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+}
+
+nav li:not(:first-child) a::before {
+    content: "·";
+    position: absolute;
+    left: -16px;
+    color: #ffffff;
+}
+
+nav li:not(:first-child) a {
+    margin-left: 26px;
+}
+
+nav ul li,
+.footer-social li,
+.socials li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav a:hover {
+    color: #f06c64;
+}
+
+nav a.active {
+    cursor: default;
+    color: #f06c64;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 15px;
+}
+
+h2,
+h3 {
+    font-weight: 900;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 19px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+}
+
+input,
+textarea {
+    margin-bottom: 16px;
+}
+
+input,
+textarea,
+form button {
+    padding: 12px 15px;
+    width: 100%;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d6564f;
+    color: #f0d8d9;
+}
+
+textarea {
+    padding: 11px 15px 13px 14px;
+    resize: none;
+    max-height: 159px;
+    margin-bottom: 14px;
+}
+
+form button {
+    padding: 12px 50px;
+    width: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f8c64f;
+    color: #886a30;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+button:hover,
+.info-phone:hover,
+.info-email:hover,
+.social:hover {
+    outline: none;
+    opacity: 0.6;
+}
+
+button {
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+img {
+    border-style: none;
+}
+
+::placeholder {
+    color: #f48c8f;
+    opacity: 1;
+}
+
+footer {
+    padding-top: 22px;
+    padding-bottom: 20px;
+    background-color: #2d303a;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    z-index: 1001;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    height: 20px;
+    width: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-icon {
+    background: #fff;
+    display: inline-block;
+    border-radius: 5px;
+    height: 2.4px;
+    width: 25px;
+    position: absolute;
+    top: calc(50% - 1.2px);
+    left: 0;
+}
+
+.menu-icon:before {
+    background: #fff;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 2.4px;
+    width: 25px;
+    top: 0;
+    left: 0;
+}
+
+.menu-icon::after {
+    background: #fff;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 2.4px;
+    width: 25px;
+    bottom: 0;
+    left: 0;
+}
+
+.menu-btn:checked~.menu-icon {
+    transform: rotate(90deg);
+}
+
+.mobile-menu {
+    opacity: 0;
+}
+
+header .wrapper .menu-btn:checked~.mobile-menu {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #2d303a;
+    opacity: 0.6;
+    transition: opacity 0.6s;
+    left: 0;
+}
+
+header .wrapper .menu-btn:checked~h1 {
+    margin: -7px 0 0 31px;
+}
+
+header .wrapper .menu-btn:checked~nav {
+    z-index: 1000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    height: 100vh;
+    width: 74%;
+    background: #2d303a;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+    align-items: unset;
+}
+
+header .wrapper .menu-btn:checked~nav ul {
+    position: relative;
+    padding-inline-start: 0;
+    top: 233px;
+    left: 72px;
+}
+
+header .wrapper .menu-btn:checked~nav ul li {
+    display: block;
+}
+
+header .wrapper .menu-btn:checked~nav ul li a {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+header .wrapper .menu-btn:checked~nav ul li:not(:first-child) a {
+    margin-left: 0;
+}
+
+header .wrapper .menu-btn:checked~nav ul li:not(:first-child) a::before {
+    display: none;
+}
+
+.slider,
+.services,
+.portfolio,
+.about,
+.contact {
+    scroll-margin-top: 89px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.slider {
+    padding-top: 89px;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.contact {
+    padding-top: 60px;
+    padding-bottom: 58px;
+    color: #f0d8d9;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.services {
+    padding-top: 60px;
+    padding-bottom: 42px;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid white;
+}
+
+.portfolio {
+    padding-top: 59px;
+    padding-bottom: 59px;
+    background-color: #2D303A;
+    border-bottom: 6px solid #323746;
+}
+
+.about {
+    padding-top: 69px;
+    padding-bottom: 49px;
+    background-color: #F2F2F2;
+    border-bottom: 6px solid #FFFFFF;
+}
+
+.slider .wrapper {
+    position: relative;
+    display: flex;
+}
+
+.arrow {
+    background-image: url(./assets/images/arrow.svg);
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    background-position: center;
+    width: 7.8431vw;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.arrow.left {
+    left: 0;
+    right: auto;
+}
+
+.arrow.right {
+    right: 0;
+    top: 0;
+    left: auto;
+    transform: scale(-1, 1);
+}
+
+.arrow:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.slide {
+    width: 100%;
+    height: 58.8235vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iphone {
+    position: relative;
+    width: 23.5294vw;
+    height: 47.3529vw;
+}
+
+.iphone-vertical {
+    left: 0;
+    right: auto;
+}
+
+.iphone-shadow {
+    background-image: url(./assets/images/iphone-shadow.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 401;
+}
+
+.iphone-phone {
+    background-image: url(./assets/images/iphone-phone.png);
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 94.8%;
+    background-size: cover;
+    position: absolute;
+    border-radius: 2.7%;
+    top: 0;
+    left: 0;
+    z-index: 402;
+}
+
+.iphone-screen {
+    background-image: url(./assets/images/iphone-screen-vertical.png);
+    background-repeat: no-repeat;
+    width: 78.95%;
+    height: 69.3%;
+    background-size: cover;
+    position: absolute;
+    border-radius: 2.7%;
+    top: 13.3%;
+    left: 5.5%;
+    cursor: pointer;
+    z-index: 403;
+}
+
+.iphone-horizontal {
+    right: 11.9vw;
+    margin-left: 31vw;
+    left: auto;
+    transform: rotate(90deg);
+}
+
+.iphone-horizontal .iphone-screen {
+    top: 18.5%;
+    background-image: url(./assets/images/iphone-screen-horizontal.png);
+}
+
+.iphone-horizontal .iphone-phone {
+    bottom: 0;
+    top: auto;
+}
+
+.iphone-horizontal .iphone-shadow {
+    transform: scale(-1, 1);
+}
+
+.services .wrapper {
+    padding: 0 30px;
+}
+
+.services .wrapper>h2,
+.services .wrapper>p {
+    padding: 0 10px;
+}
+
+.services-container {
+    margin-top: 33px;
+}
+
+.services-container,
+.portfolio-arts,
+.employees,
+.contact-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.services-container>div {
+    margin: 16px 10px;
+    flex: 1 0 30%;
+}
+
+.service {
+    padding-left: 80px;
+    background: transparent no-repeat top left;
+}
+
+.service.custom-design {
+    background-image: url(./assets/images/pen.svg);
+}
+
+.service.inovative-ideas {
+    background-image: url(./assets/images/bulb.svg);
+}
+
+.service.love-is-the-answer {
+    background-image: url(./assets/images/heart.svg);
+}
+
+.service.responsive-layout {
+    background-image: url(./assets/images/phone.svg);
+}
+
+.service.support-24-7 {
+    background-image: url(./assets/images/bubble.svg);
+}
+
+.service.feel-like-a-starn {
+    background-image: url(./assets/images/star.svg);
+}
+
+.services-container p {
+    margin-top: 12px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.service p {
+    max-height: 65px;
+    overflow: hidden;
+    text-align: justify;
+    hyphens: manual;
+}
+
+.contact a,
+.contact p {
+    color: #f0d8d9;
+}
+
+.contact-form {
+    margin-top: 44px;
+}
+
+.contact-form form {
+    flex: 2.07 0;
+}
+
+.info {
+    flex: 1 0;
+    margin-left: 20px;
+    padding-top: 1px;
+}
+
+.info-text {
+    text-align: justify;
+    line-height: 22px;
+}
+
+.info-address {
+    margin-top: 21px;
+    background-image: url(./assets/images/location-icon.png);
+    background-position: center;
+    background-position-x: 3px;
+}
+
+.info-phone {
+    background-image: url(./assets/images/phone-icon.png);
+    background-position-y: center;
+    background-position-x: left;
+}
+
+.info-email {
+    background-image: url(./assets/images/email-icon.png);
+    background-position-y: 7px;
+    background-position-x: left;
+}
+
+.info-text,
+.info-address,
+.info-phone,
+.info-email {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: 12px;
+    font-weight: normal;
+    font-size: 12px;
+    hyphens: manual;
+}
+
+.info-address,
+.info-phone,
+.info-email {
+    padding-left: 23px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.info-phone,
+.info-email {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: -4px;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.footer-social {
+    margin: 0;
+}
+
+.footer-social li:not(:first-child) {
+    margin-left: 4px;
+}
+
+.social {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-facebook {
+    background-image: url(./assets/images/facebook.png);
+}
+
+.social-google {
+    background-image: url(./assets/images/google.png);
+}
+
+.social-twitter {
+    background-image: url(./assets/images/twitter.png);
+}
+
+.social-linkedin {
+    background-image: url(./assets/images/linkedIn.png);
+}
+
+.portfolio .wrapper {
+    padding: 0 30px;
+}
+
+.portfolio-controls {
+    margin: 10px 0;
+    padding-right: 10px;
+}
+
+.portfolio-controls .control.selected,
+.portfolio-controls .control:active {
+    color: #dedede;
+    border-color: #dedede;
+    cursor: default;
+    outline: none;
+    opacity: 1;
+}
+
+.portfolio-controls .control {
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #767E9E;
+    border: 1px solid #767E9E;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-controls .control:not(:first-child) {
+    margin-left: 6px;
+}
+
+.portfolio-art {
+    margin: 10px 20px 10px 0;
+    flex: 1 0 20%;
+    min-width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-art:hover {
+    opacity: 0.5;
+}
+
+.portfolio-art:nth-child(n+13) {
+    display: none;
+}
+
+.employees {
+    margin-top: 4.5%;
+}
+
+.about .socials {
+    margin-top: 7.5%;
+    padding-left: 0px;
+}
+
+.employee {
+    flex: 1 0 25%;
+}
+
+.employee:nth-child(2) {
+    margin: 0 2%;
+}
+
+.employee>img {
+    min-width: 215px;
+    width: 100%;
+    height: auto;
+}
+
+.employee h3 {
+    margin-top: 3.5%;
+    line-height: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.employee p {
+    margin-top: 2.5%;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+@media (min-width: 1020px) {
+    .slider {
+        min-height: 600px;
+    }
+    .slide {
+        height: 600px;
+    }
+    .iphone {
+        position: relative;
+        width: 240px;
+        height: 483px;
+    }
+    .iphone-horizontal {
+        right: 13%;
+        margin-left: 33.7%;
+    }
+    .arrow {
+        width: 80px;
+        background-position-x: 40px;
+    }
+    .arrow.left {
+        background-position-x: 42px;
+    }
+}
+
+@media (max-width: 1019px) {
+    .services {
+        padding-top: 40px;
+        padding-bottom: 48px;
+        border: none;
+    }
+    .services-container {
+        margin-top: 14px;
+    }
+    .services-container>div {
+        flex-basis: 32%;
+        margin: 26px 43px 26px 10px;
+    }
+    .portfolio {
+        padding-bottom: 56px;
+    }
+    .portfolio-controls {
+        margin-bottom: 20px;
+    }
+    .portfolio-art {
+        flex-basis: 25%;
+    }
+    .about {
+        padding-top: 53px;
+        padding-bottom: 56px;
+        border: none;
+    }
+    .employees {
+        margin-top: 5.5%;
+    }
+    .employee h3 {
+        margin-top: 3%;
+    }
+    .employee p {
+        margin-top: 1%;
+    }
+    .about .socials {
+        margin-top: 3.9%;
+    }
+    .contact {
+        padding-top: 54px;
+        padding-bottom: 39px;
+    }
+    .contact h2 {
+        word-spacing: normal;
+    }
+    .contact-form {
+        margin-top: 25px;
+    }
+    .contact-form form {
+        flex: 2.02 0;
+    }
+    .info {
+        margin-left: 29px;
+    }
+    input {
+        margin-bottom: 12px;
+    }
+    textarea {
+        margin-bottom: 17px;
+        max-height: 159px;
+    }
+    form button {
+        padding: 12px 49px;
+    }
+}
+
+@media (min-width: 800px) {
+    .iphone-screen {
+        height: 69.3%;
+    }
+}
+
+@media (max-width: 767px) {
+    .slider,
+    .services,
+    .portfolio,
+    .about,
+    .contact {
+        scroll-margin-top: 70px;
+    }
+    .menu-icon {
+        display: inline-block;
+    }
+    header {
+        height: 71px;
+        padding: 24px 0;
+        border: none;
+    }
+    header .wrapper {
+        justify-content: left;
+    }
+    h1 {
+        margin-left: calc(50vw - 80px);
+        margin-top: -7px;
+        z-index: 9998;
+        font-size: 19.69px;
+        line-height: initial;
+        transition: margin-left 0.6s;
+    }
+    .navigation {
+        display: none;
+    }
+    .slide {
+        padding-top: 0;
+    }
+    .slider {
+        padding-top: 70px;
+        border: none;
+    }
+    .iphone-screen {
+        left: 6%;
+        width: 82%;
+    }
+    .services {
+        padding: 27px 0 6px 0;
+    }
+    .services .wrapper {
+        padding: 0 32px;
+    }
+    .services .wrapper>h2,
+    .services .wrapper>p {
+        padding: 0;
+    }
+    .services-container {
+        margin: 30px 0 0;
+        width: 97%;
+    }
+    .services-container>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 61px;
+        margin: 0 0 28px 0;
+        flex-basis: 100%;
+    }
+    .services-container>div:last-child {
+        margin-bottom: 21px;
+    }
+    .portfolio {
+        padding-top: 43px;
+        padding-bottom: 29px;
+        border: none;
+    }
+    .portfolio .wrapper {
+        padding: 0 22px;
+    }
+    .portfolio-controls {
+        margin-top: 16px;
+    }
+    .portfolio-art {
+        flex-basis: 32%;
+    }
+    .portfolio-art:nth-child(n + 9) {
+        display: none;
+    }
+    .about {
+        padding-top: 34px;
+        padding-bottom: 26px;
+    }
+    .about .wrapper {
+        padding: 0 30px;
+    }
+    .about .wrapper>p {
+        letter-spacing: normal;
+    }
+    .employees {
+        margin-top: 7.6%;
+    }
+    .employee {
+        flex-basis: 100%;
+    }
+    .employee:nth-child(2) {
+        margin: 4.8% 0;
+    }
+    .employee h3 {
+        margin-top: 4%;
+    }
+    .employee p {
+        margin-top: 0;
+    }
+    .contact {
+        padding-top: 45px;
+        padding-bottom: 40px;
+        border: none;
+    }
+    .contact .wrapper {
+        padding: 0 30px;
+    }
+    .contact-form {
+        margin-top: 23px;
+    }
+    .contact-form form,
+    .contact-form .info {
+        flex: 1 0 100%;
+    }
+    .contact-form textarea {
+        margin-bottom: 14px;
+    }
+    .contact-form form button {
+        padding: 18px;
+        width: 100%;
+    }
+    .info {
+        margin: 32px 0 0;
+    }
+    footer .wrapper {
+        justify-content: center;
+    }
+    .copyright {
+        display: none;
+    }
+    .footer-social {
+        padding-inline-start: 0;
+    }
+}
+
+@media (max-width: 374px) {
+    .iphone {
+        width: 70.4px;
+        height: 151.5px;
+    }
+    .iphone-phone {
+        width: 64px;
+        height: 134px;
+    }
+    .iphone-screen {
+        top: 19px;
+        width: 56px;
+        height: 98px;
+    }
+    .iphone-shadow {
+        width: 70px;
+        height: 141px;
+    }
+    .iphone-horizontal .iphone-shadow {
+        top: auto;
+        bottom: 0;
+    }
+    .iphone-horizontal .iphone-screen {
+        top: 25%;
+        height: 97.5px;
+    }
+}
